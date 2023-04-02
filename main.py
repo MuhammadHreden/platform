@@ -34,7 +34,7 @@ def execute():
 def start():
     while True:
         now = datetime.datetime.now()
-        if now.hour == 0 and 0 <= now.minute < 5:
+        if now.hour == 21 and 0 <= now.minute < 30:
             execute()
         time.sleep(1)
 
@@ -42,8 +42,7 @@ def start():
 
 
 if __name__ == '__main__':
-    print(datetime.datetime.now())
-    execute()
+    start()
 
 
 
