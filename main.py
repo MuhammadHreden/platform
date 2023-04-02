@@ -18,7 +18,7 @@ def execute():
             'txtIDNumber': file['الرقم الوطني'][i],
             'txtCarNumber': file['رقم السيارة'][i],
             'txtEmail': file['البريد الالكتروني'][i],
-            'ddlCountryCode': '00'+file['رمز الدولة'][i],
+            'ddlCountryCode': file['رمز الدولة'][i],
             'txtMobile': file['رقم الاتصال'][i],
             'chAgreed3': 'true',
             'SubmitInvest': 'إرسال الطلب',
@@ -29,6 +29,7 @@ def execute():
             image_data = f.read()
         files = {'hdFileUpload2': ('image.jpg', image_data)}
         r = rq.post(url, headers=head, data=data, files=files)
+        print(r)
 
 def start():
     while True:
@@ -41,7 +42,8 @@ def start():
 
 
 if __name__ == '__main__':
-    start()
+    print(datetime.datetime.now())
+    execute()
 
 
 
