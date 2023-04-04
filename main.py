@@ -28,6 +28,11 @@ def execute():
     file = pd.read_csv('final.csv', header=0)
     for i in range(len(file.index)):
         data = {
+            '__EVENTTARGET': '',
+            '__EVENTARGUMENT':'',
+            '__EVENTVALIDATION': '/wEdABO8qXXx/PM5nvkxWx2nv9eh8pvA6+HFiCl2huAXpz01Y9KB7S1C83NSNsQV6CvLMBCjOglmm5fGSk5UkpFsfK4e7VtKE9rGcKIq9zB9tn8FNOtUGMXIm4ud9rQzDakoQ189UyUkYpYljjxmvP51O4Ji5ypIwEMtGPIuWgpB9qJ/iltFH9tc+7BVIcJl0mPxnsTFUq8ZnQpxppV6Fzb25WmYQwdmH1m48FGJ7a8D8d+hEqHKW+l4YRR74wP3PeXQDk82N/qoGeWkR8EN6Ipy558cjD1Ar0er+dzDqJIZ4xx6rxXE3dkwa1cRACVa3MHp4BtnAbvqdf0k8lvizRTuTraFB5wEoImduF1qSzgMkNDU86q4POHfYNNfXxWfSQOGRRQ6Nt3HWAiDE50A3t7Zv/LJghaP9TPThjjv634Y25HhvMET4KfpDfQB358DSVJ30EU=',
+            '__VIEWSTATEGENERATOR': '01AED449',
+            '__VIEWSTATE': '/wEPDwUJNzE1NTUyMzU2D2QWAgIDDxYCHgdlbmN0eXBlBRNtdWx0aXBhcnQvZm9ybS1kYXRhFgwCAQ9kFgICBw8PFgIeBFRleHQFSSDZh9mIINin2YTZitmI2YUg2KfZhNiq2KfZhNmKINmE2KrYp9ix2YrYriDYqtiz2KzZitmE2YPZhSDYp9mKIDMwLzAzLzIwMjNkZAIGDxYCHgdWaXNpYmxlaGQCBw8WAh8CaGQCCA8WAh8CaGQCCQ8WAh8CaGQCCg8WAh8CaGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFCHJiRW50Sm9yBQhyYkV4dEpvclY09VFPpQzDZfGIqseDJ7h0WEqMBIkM5aAJOoEzRtFe',
             'gstdoc': file['الوجهة'][i],
             'txtName': file['الاسم'][i],
             'ddlNationality': file['الجنسية'][i],
