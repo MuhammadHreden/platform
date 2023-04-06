@@ -54,7 +54,7 @@ def execute():
 def start():
     while True:
         now = datetime.datetime.now()
-        if now.hour == 21 and 0 <= now.minute < 10:
+        if (now.hour == 20 and 55 <= now.minute < 60) or (now.hour == 21 and 0 <= now.minute < 5):
             execute()
         
 
