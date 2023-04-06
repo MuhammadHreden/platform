@@ -4,54 +4,6 @@ import datetime
 import time
 
 
-str_arr = []
-
-def execute():
-    url = 'https://visitjordan.gov.jo/travelcars/'
-
-    head = {
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54'}
-    for i in range(str_arr.shape[0]):
-        data = {
-            'gstdoc': str_arr[i][1],
-            'txtName': str_arr[i][0],
-            'ddlNationality': str_arr[i][2],
-            'txtPassportNu': str_arr[i][3],
-            'txtIDNumber': str_arr[i][4],
-            'txtCarNumber': str_arr[i][5],
-            'txtEmail': str_arr[i][6],
-            'ddlCountryCode': "00"+str_arr[i][7],
-            'txtMobile': "0"+str_arr[i][8],
-            'chAgreed3': 'true',
-            'SubmitInvest': 'إرسال الطلب',
-        }
-
-        image_path = str_arr[i][9] + '.jpg'
-        files = {'hdFileUpload2': open(image_path, 'rb')}
-        r = rq.post(url, headers=head, data=data, files=files)
-        print(r)
-
-
-def start():
-    while True:
-        now = datetime.datetime.now()
-        if now.hour == 13 and 24 <= now.minute < 25:
-            execute()
-
-
-if __name__ == '__main__':
-    file = pd.read_csv(r'final.csv', header=0)
-    arr = file.to_numpy()
-    str_arr = arr.astype(str)
-    start()
-
-
-
-
-
-
-
-'''
 def execute():
     url = 'https://visitjordan.gov.jo/travelcars/'
     head = {
@@ -102,7 +54,7 @@ def execute():
 def start():
     while True:
         now = datetime.datetime.now()
-        if now.hour == 12 and 43 <= now.minute < 44:
+        if now.hour == 21 and 0 <= now.minute < 10:
             execute()
         
 
@@ -111,6 +63,6 @@ def start():
 
 if __name__ == '__main__':
     start()
-'''
+
 
 
