@@ -49,8 +49,9 @@ def execute():
         }
 
         image_path = file['جواز السفر'][i] + '.jpg'
-        files = {'hdFileUpload2': open(image_path, 'rb'),
-                 'FileUpload2': open(image_path, 'rb')}
+        files = {
+
+         'FileUpload2': open(image_path, 'rb')}
         r = rq.post(url, headers=head, data=data, files=files)
         print(r)
 
