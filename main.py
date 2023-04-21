@@ -6,7 +6,7 @@ import datetime
 
 async def execute():
    file = pd.read_csv(r'final.csv', header=0)
-   browserObj = await launch(headless=False)#{"headless": True, "args" : ['--no-sandbox', '--disable-setuid-sandbox'] , "ignoreDefaultArgs" : ['--disable-extensions'] } )
+   browserObj = await launch(headless=True)#{"headless": True, "args" : ['--no-sandbox', '--disable-setuid-sandbox'] , "ignoreDefaultArgs" : ['--disable-extensions'] } )
    url = await browserObj.newPage()
    url.waitFor(9000000000000000000000)
    while True:
@@ -51,4 +51,5 @@ def start():
 
 
 if __name__ == '__main__':
+     asyncio.get_event_loop().run_until_complete(execute())
      start()
